@@ -19,10 +19,12 @@ namespace HolaMundoMVC.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            PeliculasServicio servicio = new PeliculasServicio();
-            Pelicula model = servicio.obtenerPelicula();
+            var servicio = new PeliculasServicio();
+            var model = servicio.obtenerPelicula();
 
-            return View(model);
+            var modelList = servicio.obtenerPeliculas();
+
+            return View(modelList);
         }
 
         public ActionResult Contact2()

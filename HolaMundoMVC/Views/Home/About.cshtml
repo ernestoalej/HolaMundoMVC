@@ -1,6 +1,6 @@
 ﻿
 
-@model HolaMundoMVC.Models.Pelicula
+@model List<HolaMundoMVC.Models.Pelicula>
 
 @{
     ViewBag.Title = "About";
@@ -14,7 +14,28 @@
 
 <p>Hola <b>@nombre</b> bienvenido a ASP.NET MVC 5</p>
 
-<h4>Titulo: @Model.Titulo</h4>
-<h5>Duración: @Model.Duracion</h5>
-<h5>Publicacion: @Model.Publicacion.ToString("dd/MM/yyyy")</h5>
-<h5>Filmado en: @Model.Pais</h5>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Duracion</th>
+            <th>Publicacion</th>
+            <th>Pais</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var pelicula in Model)
+        {
+            <tr>
+                <td>@pelicula.Titulo</td>
+                <td>@pelicula.Duracion</td>
+                <td>@pelicula.Publicacion.ToString("dd/MM/yyyy")</td>
+                <td>@pelicula.Pais</td>            
+            </tr>
+        }
+    </tbody>
+
+</table>
