@@ -1,4 +1,8 @@
-﻿@{
+﻿
+
+@model HolaMundoMVC.Models.Pelicula
+
+@{
     ViewBag.Title = "About";
 
     string nombre = "Ernesto Contreras";
@@ -8,4 +12,9 @@
 
 <p>Use this area to provide additional information.</p>
 
-<p>Hola @nombre bienvenido a ASP.NET MVC 5</p>
+<p>Hola <b>@nombre</b> bienvenido a ASP.NET MVC 5</p>
+
+<h4>Titulo: @Model.Titulo</h4>
+<h5>Duración: @Model.Duracion</h5>
+<h5>Publicacion: @Model.Publicacion.ToString("dd/MM/yyyy")</h5>
+<h5>Filmado en: @Model.Pais</h5>

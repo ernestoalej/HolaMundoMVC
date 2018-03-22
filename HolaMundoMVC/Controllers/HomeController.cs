@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HolaMundoMVC.Models;
+using HolaMundoMVC.Servicio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,7 +19,10 @@ namespace HolaMundoMVC.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            PeliculasServicio servicio = new PeliculasServicio();
+            Pelicula model = servicio.obtenerPelicula();
+
+            return View(model);
         }
 
         public ActionResult Contact2()
